@@ -1,0 +1,80 @@
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatefulWidget {
+//   @override
+//   _MyState createState() => _MyState();
+// }
+
+// class _MyState extends State<MyApp> {
+//   Color _containerColor = Colors.yellow;
+
+//   void changeColor() {
+//     setState(() {
+//       if (_containerColor == Colors.yellow) {
+//         _containerColor = Colors.red;
+//         return;
+//       }
+//       _containerColor = Colors.yellow;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         title: 'Flutter Demo',
+//         theme: ThemeData(
+//           primarySwatch: Colors.blue,
+//         ),
+//         home: Scaffold(
+//           appBar: AppBar(title: Text("A Simple App Stateful Widget")),
+//           body: Container(decoration: BoxDecoration(color: _containerColor)),
+//           floatingActionButton: FloatingActionButton(
+//             onPressed: changeColor,
+//             child: Icon(Icons.add),
+//             tooltip: "Book Here",
+//           ),
+//         ));
+//   }
+// }
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyButton());
+}
+
+class MyButton extends StatelessWidget {
+  // MyButton({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar:
+              AppBar(title: Text("appbar", textDirection: TextDirection.ltr)),
+          body: Container(
+              constraints: BoxConstraints(
+                  maxHeight: double.infinity, maxWidth: double.infinity),
+              color: Colors.red,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    // width: 100,
+                    // height: 300,
+                    padding: EdgeInsets.all(8.0),
+                    child: const Text("data"),
+                  ),
+                  Container(
+                      // width: 100,
+                      // height: 300,
+                      padding: EdgeInsets.all(8.0),
+                      child: Text("data"))
+                ],
+              ))),
+    );
+  }
+}
